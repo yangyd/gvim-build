@@ -1,11 +1,12 @@
 @echo off
+setlocal
 
 cd %~dp0..\src
 
 for %%a in (%*) do (
   if /I "%%a"=="/clean" set ARG_CLEAN=Y
 )
-if X_%ARG_CLEAN%=X_Y (
+if X_%ARG_CLEAN%==X_Y (
   goto clean
 ) else (
   goto build
